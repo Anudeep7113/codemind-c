@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int n,c=0,j,c1=0,i;
+    int n,i,j,c=0,co=0;
     scanf("%d",&n);
     for(i=1;i<=n;i++)
     {
@@ -16,10 +16,10 @@ int main()
             }
             if(c!=2)
             {
-                c1++;
+                co++;
             }
             c=0;
         }
     }
-    printf("%d",c1);
+    printf("%d",co);
 }
