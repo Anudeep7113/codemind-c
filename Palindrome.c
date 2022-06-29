@@ -1,18 +1,17 @@
 #include<stdio.h>
 int main()
-{
-    int n,i,t=0,m;
-    scanf("%d",&n);
-    m=n;
-    while(n!=0)
+{ 
+    int n, t, sum = 0, remainder ; 
+    scanf ("%d", &n); 
+    t = n; while (n>0) 
     {
-        i=n%10;
-        n/=10;
-        t=((t*10) +i);
-    }
-    if(m==t)
-    printf("True");
-    else
+        remainder = n % 10;
+        sum = sum *10 + remainder ; 
+        n = n/ 10; 
+    } 
+    if(t== sum)
+    printf("True"); 
+    else 
     printf("False");
     return 0;
 }
