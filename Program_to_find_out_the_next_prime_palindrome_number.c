@@ -1,33 +1,40 @@
 #include <stdio.h>
+#include <math.h>
 int main()
 {
-    int a, j, k = 0, n, t, count = 0;
-    scanf("%d", &a);
-    a += 1;
-    while(1)
-    {k=0;
-        a++;
-        t=a;
-        while (t != 0)
-        {
-            j = t % 10;
-            k = j + k * 10;
-            t /= 10;
-        }
-        if (a == k)
-        {
-            count = 0;
-            for (n = 1; n <= a; n++)
-            {
-                if (a % n == 0)
-                    count++;
-            }
-            if (count == 2)
-            {
-                printf("%d", a);
-                return 0;
-            }
-        }
+  long n, t, r = 0, c, d;
+  scanf("%ld", &n);
+
+  while (1)
+  {
+    n++;
+    t = n;
+    while(t)
+    {
+      r = r*10;
+      r = r + t%10;
+      t = t/10;
     }
-    return 0;
+
+
+    if (r == n)
+    {
+      d = (int)sqrt(n);
+
+   
+      for (c = 2; c <= d; c++)
+      {
+        if (n%c == 0)
+          break;
+      }
+      if (c == d+1)
+        break;
+    }
+    r = 0;
+  }
+
+  printf("%ld
+",n);
+
+  return 0;
 }
