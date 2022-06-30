@@ -1,0 +1,48 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,a[100],b[100],j=0,c,g,m;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+        b[j]=a[i];
+        j++;
+    }
+    g=a[0];
+    while(g>0)
+    {
+      m++;
+      g=g/10;
+    }
+    for(i=0;i<n;i++)
+    {
+        c=0;
+        while(a[i]>0)
+        {
+            c++;
+            a[i]=a[i]/10;
+        }
+        if(c<m)
+        {
+            m=c;
+        }
+    }
+    c=0;
+    int t,f=0;
+    for(i=0;i<j;i++)
+    {
+        c=0;
+        t=b[i];   
+        while(b[i]>0)
+        {
+            c++;
+            b[i]=b[i]/10;
+        }
+        if(m==c)
+        {
+            f++;
+        }
+    }
+    printf("%d",f);
+}
