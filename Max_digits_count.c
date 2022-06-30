@@ -1,0 +1,42 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,a[100],b[100],j=0,d=0,c;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+        b[j]=a[i];
+        j++;
+    }
+    for(i=0;i<n;i++)
+    {
+        c=0;
+        while(a[i]>0)
+        {
+            c++;
+            a[i]=a[i]/10;
+        }
+        if(c>d)
+        {
+            d=c;
+        }
+    }
+    c=0;
+    int t,f=0;
+    for(i=0;i<j;i++)
+    {
+        c=0;
+        t=b[i];   
+        while(b[i]>0)
+        {
+            c++;
+            b[i]=b[i]/10;
+        }
+        if(d==c)
+        {
+            f++;
+        }
+    }
+    printf("%d",f);
+}
