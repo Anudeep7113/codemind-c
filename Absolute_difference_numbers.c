@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+    int n,a[100],k,c=0,i,s=0,r,d=0,t,b=0;
+    scanf("%d%d",&n,&k);
+    t=n;
+    while(n>0)
+    {
+        c++;
+        n=n/10;
+    }
+    for(i=c-1;i>=0;i--)
+    {
+        r=t%10;
+        a[i]=r;
+        t=t/10;
+    }
+    for(i=0;i<c;i++)
+    {
+        s=s*10+a[i];
+        d++;
+        if(d==k)
+        {
+            break;
+        }
+    }
+    for(i=c-k;i<c;i++)
+    {
+        b=b*10+a[i];
+    }
+    printf("%d",abs(s-b));
+}
